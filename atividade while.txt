@@ -1,0 +1,88 @@
+let usuarioCorreto = "admin"
+let senhaCorreta = "1234"
+
+let tentativas = 0
+let maxTentativas = 3
+let acessoLiberado = false
+
+while (tentativas < maxTentativas && !acessoLiberado) {
+  let usuario = prompt("Digite o nome de usuário:")
+  let senha = prompt("Digite a senha:")
+
+  if (usuario === usuarioCorreto && senha === senhaCorreta) {
+    alert("Login realizado com sucesso!")
+    acessoLiberado = true
+  } else {
+    tentativas++
+    if (tentativas < maxTentativas) {
+      alert(`Usuário ou senha incorretos. Tentativas restantes: ${maxTentativas - tentativas}`)
+    }
+  }
+}
+
+if (!acessoLiberado) {
+  alert("Acesso bloqueado.");
+}
+let nomeCadastrado = prompt("Cadastre seu nome de usuário:");
+let senhaCadastrada = prompt("Cadastre sua senha:");
+
+let tentativas = 0
+let maxTentativas = 3
+let loginBemSucedido = false
+
+while (tentativas < maxTentativas && !loginBemSucedido) {
+  let nomeLogin = prompt("Digite seu nome de usuário:")
+  let senhaLogin = prompt("Digite sua senha:")
+
+  if (nomeLogin === nomeCadastrado && senhaLogin === senhaCadastrada) {
+    alert("Login realizado com sucesso!")
+    loginBemSucedido = true
+  } else {
+    tentativas++;
+    if (tentativas < maxTentativas) {
+      alert(`Dados incorretos. Tentativas restantes: ${maxTentativas - tentativas}`)
+    }
+  }
+}
+
+if (!loginBemSucedido) {
+  alert("Acesso bloqueado.")
+}
+let usuarioCadastrado = "lua"
+let senhaCadastrada = "1234" 
+
+let logado = false
+
+while (!logado) {
+  let usuario = prompt("Digite o nome de usuário:")
+  let senha = prompt("Digite a senha:")
+
+  if (usuario === usuarioCadastrado && senha === senhaCadastrada) {
+    alert("Você está logado!")
+    logado = true
+
+    let comando = prompt('Digite "sair" para fazer logout:')
+    if (comando.toLowerCase() === "sair") {
+      alert("Você saiu da conta.")
+      logado = false
+    }
+  } else {
+    alert("Usuário ou senha incorretos. Tente novamente.")
+  }
+}
+let nomeCadastrado = "joe goldberg"
+let senhaCadastrada = "8902"
+
+let logado = false
+
+while (logado === false) {
+  let nome = prompt("Digite o nome de usuário:")
+  let senha = prompt("Digite a senha:")
+
+  if (nome === nomeCadastrado && senha === senhaCadastrada) {
+    prompt("Login realizado com sucesso! Pressione Enter.")
+    logado = true
+  } else {
+    prompt("Usuário ou senha incorretos. Tente novamente.")
+  }
+}
