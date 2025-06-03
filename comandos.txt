@@ -1,0 +1,89 @@
+su -
+
+mkdir projeto
+mkdir projeto/projeto1
+mkdir projeto1  # Esse comando falhou pois o diretório já existia
+
+ls
+
+cd projeto1
+
+echo > arquivo1.txt
+ls
+
+echo "conteudo de exemplo" > arquivo2.txt
+cat arquivo2.txt
+
+mv arquivo2.txt documento.txt
+ls
+
+cd ..
+mkdir backup
+ls
+
+cp documento.txt backup  # Esse comando falhou pois 'documento.txt' não estava no diretório atual
+
+ls
+
+mv documento.txt projeto1  # Também falhou pelo mesmo motivo
+ls
+
+mv documento.txt projeto1  # Falhou: 'documento.txt' não encontrado
+ls
+
+rm projeto1 documento.txt  # Falhou: 'documento.txt' não encontrado, 'projeto1' é diretório
+cd projeto1
+rm documento.txt  # Falhou: 'documento.txt' não encontrado
+
+mkdir file1.txt projeto1/file2.txt projeto1/file3.txt projeto  # Falhou: 'file3.txt' não pôde ser criado
+
+ls
+
+mkdir file2.txt projeto1/mkdir file3.txt projeto1  # Falhou: erro de sintaxe, tentativa de criar 'mkdir' como pasta
+
+ls
+
+echo "11/03/2025" > relatorio.txt
+cat relatorio.tx  # Falhou: erro de digitação (deveria ser .txt)
+su -
+mkdir projeto
+mkdir projeto/projeto1
+cd projeto1
+echo > arquivo1.txt
+echo "conteudo de exemplo" > arquivo2.txt
+cat arquivo2.txt
+mv arquivo2.txt documento.txt
+cd ..
+mkdir backup
+cp documento.txt backup
+mv documento.txt projeto1
+rm projeto1 documento.txt
+cd projeto1
+rm documento.txt
+mkdir file1.txt projeto1/file2.txt projeto1/file3.txt projeto
+mkdir file2.txt projeto1/mkdir file3.txt projeto1
+echo "11/03/2025" > relatorio.txt
+cat relatorio.tx
+cat relatorio.txt
+echo "Texto adicional" >> relatorio.txt
+mkdir imagens
+mv file1.txt imagens
+mv file2.txt imagens
+cd imagens
+ls
+rm -r imagens
+echo "Texto de exemplo" > projeto1
+cat projeto1
+cd ..
+mkdir temp
+mv projeto1 temp
+cd temp
+sl
+ls
+rm temp
+cd ..
+echo backup.txt
+mv backup.txt
+cd backup.txt
+mv backup backup_old
+rm backup_old
